@@ -7,3 +7,12 @@
 React, Typescript, Redux-toolkit, localStorage, Styled-component
 
 ## 기능 시연
+
+| 질문 생성 | 
+| ------ | 
+|![ss](https://github.com/susuje/survey-form/assets/115439373/5de8db2a-4258-4f42-bfa0-f9a7523c6dcf)|
+
+
+| 미리보기 및 제출 |
+| ------ |
+|![pr](https://github.com/susuje/survey-form/assets/115439373/b44eccb9-a2a5-44d4-9ae9-87999488ccf9)|
