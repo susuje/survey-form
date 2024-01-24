@@ -2,7 +2,7 @@
 
 > 객관식, 체크박스, 드롭다운 등 다양한 형식의 질문을 생성할 수 있는 설문조사 웹 어플리케이션 <br>
 
-배포 : q-survey-form.netlify.app/
+배포 : https://q-survey-form.netlify.app/
 
 ## 프로젝트 기능 소개
 ```
