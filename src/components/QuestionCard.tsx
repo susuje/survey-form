@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
-
+import useDebounce from '../hook/useDebounce'
 import {
   deleteQuestion,
   updateQuestion,
@@ -29,6 +29,7 @@ export default function QuestionCard({ id }: Props) {
   const [didUserUpdated, setDidUserUpdated] = useState(false)
   const [type, setType] = useState('객관식 질문')
   const [title, setTitle] = useState('제목없는 질문')
+  const debouncedTitle = useDebounce(title)
   const [optionList, setOptionList] = useState<string[]>(['옵션 1'])
   const [clicked, setClicked] = useState(false)
   const [isRequired, setisRequired] = useState(false)
@@ -59,6 +60,7 @@ export default function QuestionCard({ id }: Props) {
   useEffect(() => {
     //첫 렌더링에서는 실행되면안된다.(초기화되는오류발생) 사용자가 직접 수정할때만 updateQuestion이 실행되어야함!!
     if (didUserUpdated) {
+      console.log('수정중')
       dispatch(
         updateQuestion({
           title: title,
@@ -70,7 +72,7 @@ export default function QuestionCard({ id }: Props) {
       )
       setDidUserUpdated(false)
     }
-  }, [type, title, optionList, isRequired])
+  }, [type, debouncedTitle, optionList, isRequired])
 
   useEffect(() => {
     //console.log('hi', id) //첫 렌더링에 실행되고,변경감지때 다시 마운트
